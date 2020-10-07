@@ -1,171 +1,122 @@
 <!-- Starting from D6's exercise, use your Smartphone Shop Website and implement the following exercises-->
-<html lang=""en">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<!DOCTYPE html>
+<html>
+<head>
     <title>Artur's Smartphone Shop</title>
-
-    <style>
-      html {
-        font-family: sans-serif;
-        color: #333;
-      }
-      body {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 0 15px;
-      }
-      div,
-      article {
-        padding: 10px;
-        margin: 5px;
-        border: 1px solid #dedede;
-      }
-    </style>
+    <link rel="stylesheet" href="Styles.css">
 </head>
 
 <body>
-    <h1>Artur's Smartphone Shop</h1>
+    <h1 id ="Title" onmouseover="addClassToTitle()" onmouseout="removeClassFromTitle()">Artur's Smartphone Shop</h1>
+    <button onclick="toggleShowImages()">Toggle Images</button>
+        <table id="Table" style="width:100%">
+            <tr>
+                <th>Image</th>
+                <th>Name</th> 
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><img src="Smartphones/Iphone11.jpg" alt="IPhone11" style="width: 10cm;height: 10cm;"></td>
+                <td>Apple iPhone 11</td>
+                <td>Description</td>
+                <td><a href="https://www.amazon.de/Apple-iPhone-11-64-GB-Schwarz/dp/B07XRR7N5V/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Apple+iPhone+11&qid=1601994155&s=ce-de&sr=1-3">666,00€</a></td>
+            </tr>
+            <tr>
+                <td><img src="Smartphones/GalaxyA51.jpg" alt="Samsung Galaxy A51" style="width: 10cm;height: 10cm;"></td>
+                <td>Samsung Galaxy A51</td>
+                <td>Description</td>
+                <td><a href="https://www.amazon.de/Samsung-interner-Speicher-Android-Deutsche-crush-black/dp/B082WG57K6/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Samsung+Galaxy+A51&qid=1601994372&s=ce-de&sr=1-3">277,73€</a></td>
+            </tr>
+            <tr>
+                <td><img src="Smartphones/RedmiNote8.jpg" alt="Xiaomi Redmi Note 8" style="width: 10cm;height: 10cm;"></td>
+                <td>Xiaomi Redmi Note 8</td>
+                <td>Description</td>
+                <td><a href="https://www.amazon.de/Xiaomi-Redmi-Note-Smartphone-4000mAh-Schwarz/dp/B07Y179QD8/ref=sr_1_4?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Xiaomi+Redmi+Note+8&qid=1601994404&s=ce-de&sr=1-4">185,00€</a></td>
+            </tr>
+            <tr>
+                <td><img src="Smartphones/Note8Pro.jpg" alt="Xiaomi Redmi Note 8 Pro" style="width: 10cm;height: 10cm;"></td>
+                <td>Xiaomi Redmi Note 8 Pro</td>
+                <td>Description</td>
+                <td><a href="https://www.amazon.de/Xiaomi-Smartphone-interner-Vierfach-KI-R%C3%BCckkamera-Selfie-Frontkamera/dp/B07Y8YWTFL/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Xiaomi+Redmi+Note+8+Pro&qid=1601994438&s=ce-de&sr=1-3">209,00€</a></td>
+            </tr>
+            <tr>
+                <td><img src="Smartphones/Oneplus7Pro.jpg" alt="Oneplus7Pro" style="width: 10cm;height: 10cm;"></td>
+                <td>OnePlus 7 Pro</td>
+                <td>Description</td>
+                <td><a href="https://www.amazon.de/OnePlus-Smartphone-Mirror-Display-Speicher-Grey/dp/B07R97WZJ9">609,98€</a></td>
+            </tr>
+        </table>
+    <h2>Where to find my Shop</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10666.758477249405!2d8.549439104828283!3d48.05833032285498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4790978c3eda7875%3A0x8d2fd4234f56884e!2sWaldfriedhof%20Schwenningen!5e0!3m2!1sde!2sde!4v1601999945695!5m2!1sde!2sde" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    
+    <h2>Review Shop</h2>
+        <textarea id="ShopReview" name="ShopReview" rows="4" cols="50">
+        </textarea>
+        <button type="button">Submit!</button>
+    
+    <h2 id="listTitle">Todo List</h2>
 
-    <h2>Top Sellers</h2>
+        <ul id="firstList">
+            <li><p>1st</p></li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
 
-    <table style="max-width: 5cm;">
-        <tr>
-          <th>Apple iPhone 11</th>
-        </tr>
-        <tr>
-        <td> 
-              <img src="Smartphones/Iphone11.jpg" alt="IPhone11" style="width: 10cm;height: 10cm;">
-        </td>
-        </tr>
-        <td>
-            <div>
-                Description:</div>
-            </div>
-        </td>
-        <td>
-            <div>
-                Price: 666,00€
-                <a href="https://www.amazon.de/Apple-iPhone-11-64-GB-Schwarz/dp/B07XRR7N5V/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Apple+iPhone+11&qid=1601994155&s=ce-de&sr=1-3">Amazon</a>                
-            </div>
-        </td>
-        </tr>
-        <tr>
-            <th>Samsung Galaxy A51</th>
-        </tr>
-        <tr>
-          <td>
-              <img src="Smartphones/GalaxyA51.jpg" alt="Samsung Galaxy A51" style="width: 10cm;height: 10cm;">
-            </td>
-        </tr>
-        <td>
-            <div>
-                Description:
-            </div>
-        </td>
-        <td>
-            <div>
-                Price: 277,73€
-                <a href="https://www.amazon.de/Samsung-interner-Speicher-Android-Deutsche-crush-black/dp/B082WG57K6/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Samsung+Galaxy+A51&qid=1601994372&s=ce-de&sr=1-3">Amazon</a>                
-            </div>
-        </td>
-        <tr>
-            <th>Xiaomi Redmi Note 8</th>
-        </tr>
-        <tr>
-            <td>
-                <img src="Smartphones/RedmiNote8.jpg" alt="Xiaomi Redmi Note 8" style="width: 10cm;height: 10cm;">
-            </td>
-        </tr>
-        <td>
-            <div>
-                    Description:
-            </div>
-            </div>
-        </td>
-            <td>
-                <div>
-                    Price: 185,00€
-                    <a href="https://www.amazon.de/Xiaomi-Redmi-Note-Smartphone-4000mAh-Schwarz/dp/B07Y179QD8/ref=sr_1_4?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Xiaomi+Redmi+Note+8&qid=1601994404&s=ce-de&sr=1-4">Amazon</a>                
-                </div>
-            </td>
-          </tr>
-        <tr>
-            <th>Xiaomi Redmi Note 8 Pro</th>
-        </tr>
-        <tr>
-        <td>
-                <img src="Smartphones/Note8Pro.jpg" alt="Xiaomi Redmi Note 8 Pro" style="width: 10cm;height: 10cm;">
-        </td>
-        </tr>
-        <td>
-            <div>
-                Description:
-                </div>
-            </div>
-        </td>
-        <td>
-            <div>
-                Price: 209,00€
-                <a href="https://www.amazon.de/Xiaomi-Smartphone-interner-Vierfach-KI-R%C3%BCckkamera-Selfie-Frontkamera/dp/B07Y8YWTFL/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=Xiaomi+Redmi+Note+8+Pro&qid=1601994438&s=ce-de&sr=1-3">Amazon</a>                
-            </div>
-        </td>
-          </tr>
-        <tr>
-            <th>OnePlus 7 Pro</th>
-        </tr>
-        <tr>
-        <td>
-                <img src="Smartphones/Oneplus7Pro.jpg" alt="Oneplus7Pro" style="width: 10cm;height: 10cm;">
-        </td>
-        </tr>
-        <td>
-            <div>
-                Description:
-                </div>
-            </div>
-        </td>
-        <td>
-            <div>
-                Price: 609,98€
-                <a href="https://www.amazon.de/OnePlus-Smartphone-Mirror-Display-Speicher-Grey/dp/B07R97WZJ9">Amazon</a>                
-            </div>
-        </td>
-        </tr>
-    </table> 
-<h3>Map</h3>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.1368882810957!2d8.529164527310991!3d48.04163346186687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479097bb6ea5a133%3A0x801e452b561bcc4c!2sErholungspunkt!5e0!3m2!1sen!2sde!4v1601994591258!5m2!1sen!2sde" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <ul id="secondList">
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
 
-<h4>Review Shop</h4>
-<label for="ShopReview">Review of the Shop</label>
-
-<textarea id="ShopReview" name="ShopReview" rows="4" cols="50">
-</textarea>
-<input type="submit" value="Submit">
-
+        <div>
+            <p>This text is just for the exercise</p>
+            <button type="button" onclick="changePContent()">Click Me!</button>
+        </div>
+        <input type="text" placeholder="new title" id="newTitle" />
+        <button type="button" onclick="changeListTitle()">Change Title</button>
+        <input type="text" placeholder="new List Item" id="newli2" />
+        <button type="button" onclick="addToTheSecond()">Add To List 2</button>
+        <button type="button" onclick="firstUlDisappear()">Remove First List</button>
+        <button type="button" onclick="paintItGreen()">Paint It Green</button>
+    <script src="Script.js"></script> 
+</body>
+<footer>
+    <address>
+        Artur's Smartphone Shop<br>
+        Am Waldfriedhof 15<br>
+        78056 Villingen-Schwenningen<br>  
+    </address>
+</footer>
+</html> 
 <script>
   /*EXERCISE 1 
      Create a new welcome alert message when the page successfully loads
     */
-  window.onload = function () {
-      alert("Welcome to Artur's Online Shop")
-  };
+window.onload = function () {
+    alert("Welcome to Artur's Online Shop")
+};
   /* EXERCISE 2
       Write a function to change the Title of the page in something else (execute the function in browser console)
   */
-  const changeTitle = function (newTitle) {
-      document.title = newTitle
-  };
+const changeTitle = function (newTitle) {
+    document.title = newTitle
+    document.getElementsByTagName("h1")[0].innerHTML = newTitle;
+}
   /* EXERCISE 3a
       Write a function to add a class to the page's h1 title in "red-color" (execute the function when title is hovered by mouse).
   */
-  const addClassToTitle = function () {
-      
-  };
+const addClassToTitle = function () {
+    let element = document.getElementById("Title");
+    element.classList.add("redTitle");
+  }
   /* EXERCISE 3b
       Write a function to remove "red-color" class from previous h1 (execute the function when the mouse leaves the title).
   */
-  const removeClassFromTitle = function () {};
+const removeClassFromTitle = function () {
+    let element = document.getElementById("Title");
+    element.classList.remove("redTitle");
+  }
   /* EXERCISE 4
       Add the following html snippet to your page:
           <h2 id="listTitle">Todo List</h2>
@@ -184,34 +135,72 @@
           </div>
   Write a function to change the text of only the p which are child of a div (execute the function by assigning it to a button's click event)
   */
-  const changePContent = function () {};
+const changePContent = function () {
+    let paragraph = document.querySelectorAll('div p');
+    for(let i=0; i<paragraph.length; i++){
+    paragraph[i].innerText= "Loser";
+    }
+};
   /* EXERCISE 5
       Write a function to change the list title (you can use previous day's textarea as input or create a new text input field to grab the content)
   */
-  const changeListTitle = function (content) {};
+const changeListTitle = function () {
+  let content = document.getElementById("newTitle")
+  let ListTitle = document.getElementById("listTitle")
+  ListTitle.innerText = content.value
+};
   /* EXERCISE 6
        Write a function to add a new item ONLY to the second list (create an input field + add button)
   */
-  const addToTheSecond = function (content) {};
+const addToTheSecond = function () {
+  let content = document.getElementById("newli2")
+  let secondList = document.getElementById("secondList")
+  let newItem = document.createElement("li")
+  newItem.innerText = content.value
+  secondList.appendChild(newItem)
+}
   /* EXERCISE 7
       Write a function to make the first UL disappear (button)
   */
-  const firstUlDisappear = function () {};
+
+const firstUlDisappear = function () {
+  firstUl = document.getElementById("firstList")
+  firstUl.remove()
+};
   /* EXERCISE 8
       Write a function to make the background of every UL green (button)
   */
-  const paintItGreen = function () {};
+const paintItGreen = function () {
+  let ulList = document.querySelectorAll("ul")
+  for (let i = 0; i < ulList.length; i++) {
+    ulList[i].style.backgroundColor= "green";
+  }
+};
 
   /* EXERCISE 9
       Add a "magnifier function" to the table.
       When the user mouse goes on a table cell (not the image one) the font size must increase.
       HINT use mouseenter / mouseleave events
   */
-  const makeThemMagnifiable = function () {};
+const makeThemMagnifiable = function () {
+  let tableCell = document.querySelectorAll('td');
+  for(let i=0; i<tableCell.length; i++){       
+      tableCell[i].style.fontSize="30px";   
+}
+};
   /* EXERCISE 10
       Add a button to toggle all the product images (toggle => if visible, hide, if not visible, show)
   */
-  const toggleShowImages = function () {};
+const toggleShowImages = function () {
+  let image = document.getElementsByTagName("img")
+  for(let i=0; i<image.length; i++){
+      if(image[i].style.display==="none"){
+      image[i].style.display="block";
+     }else{
+      image[i].style.display="none";
+  }
+}
+};
 
   //##### EXTRA
 
