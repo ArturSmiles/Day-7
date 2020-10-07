@@ -1,0 +1,11 @@
+table, th, td {
+    border: 1px solid black;
+  }
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+.redTitle {
+    color: red
+}
